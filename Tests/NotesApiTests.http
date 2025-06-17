@@ -1,0 +1,65 @@
+### Testar adicionar uma nova nota (POST)
+POST http://localhost:5000/api/notes
+Content-Type: application/json
+
+{
+  "titulo": "Nota de teste",
+  "conteudo": "Conteúdo da nota de teste",
+  "tags": ["teste", "nota"],
+  "categoria": "geral"
+}
+
+### Testar obter todas as notas (GET)
+GET http://localhost:5000/api/notes
+
+### Testar obter nota por ID (GET) - substituir {id} pelo ID real da nota criada
+GET http://localhost:5000/api/notes/{id}
+
+### Testar editar nota (PUT) - substituir {id} pelo ID real da nota criada
+PUT http://localhost:5000/api/notes/{id}
+Content-Type: application/json
+
+{
+  "titulo": "Nota atualizada",
+  "conteudo": "Conteúdo atualizado",
+  "tags": ["atualizado"],
+  "categoria": "importante"
+}
+
+### Testar excluir nota (DELETE) - substituir {id} pelo ID real da nota criada
+DELETE http://localhost:5000/api/notes/{id}
+
+### Testar pesquisa por texto (GET)
+GET http://localhost:5000/api/notes?pesquisa=teste
+
+### Testar filtro por categoria (GET)
+GET http://localhost:5000/api/notes?categoria=geral
+
+### Testar filtro por tag (GET)
+GET http://localhost:5000/api/notes?tag=teste
+
+### Testar ordenação por título (GET)
+GET http://localhost:5000/api/notes?ordenarPor=titulo
+
+### Testar ordenação por data de criação (GET)
+GET http://localhost:5000/api/notes?ordenarPor=datacriacao
+
+### Testar ordenação por data de atualização (GET)
+GET http://localhost:5000/api/notes?ordenarPor=dataatualizacao
+
+### Testar nota não encontrada (GET)
+GET http://localhost:5000/api/notes/00000000-0000-0000-0000-000000000000
+
+### Testar nota não encontrada (PUT)
+PUT http://localhost:5000/api/notes/00000000-0000-0000-0000-000000000000
+Content-Type: application/json
+
+{
+  "titulo": "Nota inexistente",
+  "conteudo": "Conteúdo",
+  "tags": [],
+  "categoria": ""
+}
+
+### Testar nota não encontrada (DELETE)
+DELETE http://localhost:5000/api/notes/00000000-0000-0000-0000-000000000000
