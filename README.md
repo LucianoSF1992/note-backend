@@ -1,0 +1,1 @@
+Backend de um aplicativo de anotações onde os usuários podem adicionar, editar e excluir notas. Implemente recursos como ordenação, pesquisa, marcação e categorização das notas para melhorar a experiência do usuário. Foi utilizado ASP.NET Core para desenvolver o projeto.
